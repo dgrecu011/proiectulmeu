@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 12",
+      "description": "Un smartphone cu performanțã remarcabile și un design elegant.",
+      "price": 999,
+      "discountPrice": 899,
+      "image": "https://example.com/iphone12.jpg",
+      "tag": "Popular",
+      "features": [
+        "Display: 6.1-inch Super Retina XDR",
+        "Camera: 12MP Ultra Wide and Wide",
+        "Processor: A14 Bionic chip",
+        "Battery: Up to 17 hours of talk time"
+      ],
+      "colorOptions": ["Black", "White", "Red", "Green", "Blue"],
+      "stock": 25
+    },
+    {
+      "id": 2,
+      "name": "iPhone 13",
+      "description": "Cel mai nou model de iPhone, cu îmbunătășiri semnificative.",
+      "price": 1199,
+      "discountPrice": 1099,
+      "image": "https://example.com/iphone13.jpg",
+      "tag": "New",
+      "features": [
+        "Display: 6.1-inch Super Retina XDR",
+        "Camera: Dual 12MP system",
+        "Processor: A15 Bionic chip",
+        "Battery: Up to 19 hours of talk time"
+      ],
+      "colorOptions": ["Starlight", "Midnight", "Blue", "Pink", "Red"],
+      "stock": 30
+    },
+    {
+      "id": 3,
+      "name": "iPhone 14",
+      "description": "Îmbunătățiri în performanță și cameră pentru cele mai bune fotografii.",
+      "price": 1299,
+      "discountPrice": null,
+      "image": "https://example.com/iphone14.jpg",
+      "tag": "Latest",
+      "features": [
+        "Display: 6.1-inch Super Retina XDR",
+        "Camera: Dual 12MP system",
+        "Processor: A15 Bionic chip",
+        "Battery: Up to 20 hours of talk time"
+      ],
+      "colorOptions": ["Midnight", "Purple", "Blue", "Red", "Starlight"],
+      "stock": 20
+    },
+    {
+      "id": 4,
+      "name": "iPhone SE (2022)",
+      "description": "Cel mai accesibil iPhone, cu performanțe de top.",
+      "price": 499,
+      "discountPrice": null,
+      "image": "https://example.com/iphonese.jpg",
+      "tag": "Budget",
+      "features": [
+        "Display: 4.7-inch Retina HD",
+        "Camera: 12MP Wide",
+        "Processor: A15 Bionic chip",
+        "Battery: Up to 15 hours of talk time"
+      ],
+      "colorOptions": ["Black", "White", "Red"],
+      "stock": 15
+    }
+  ]
+}
