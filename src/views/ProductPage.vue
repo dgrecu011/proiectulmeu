@@ -1,91 +1,114 @@
 <template>
-  <div class="container mx-auto p-6">
-    <div v-if="product" class="flex flex-col lg:flex-row items-center">
-      <!-- Product Image -->
-      <div class="w-full lg:w-1/2">
-        <img :src="product.image" :alt="product.name" class="w-full h-auto rounded-lg shadow-lg" />
+  <div class="container mx-auto p-4">
+    <div v-if="product" class="flex flex-col md:flex-row">
+      <div class="flex-1">
+        <img
+          :src="product.image"
+          :alt="product.name"
+          class="w-full h-auto rounded-lg shadow-lg mb-4"
+        />
       </div>
+      <div class="flex-1 md:pl-8">
+        <h1 class="text-3xl font-bold text-gray-800">{{ product.name }}</h1>
+        <p class="mt-2 text-lg text-gray-600">{{ product.description }}</p>
+        <p class="mt-4 text-xl font-semibold text-gray-900">
+          Preț: <span v-if="product.discountPrice" class="line-through text-gray-500">{{ formatPrice(product.price) }}</span>
+        </p>
+        <p class="mt-2 text-2xl font-bold text-red-600">
+          {{ product.discountPrice ? formatPrice(product.discountPrice) : formatPrice(product.price) }}
+        </p>
 
-      <!-- Product Details -->
-      <div class="w-full lg:w-1/2 lg:pl-10 mt-6 lg:mt-0">
-        <h1 class="text-3xl font-bold mb-4">{{ product.name }}</h1>
-        <p class="text-lg mb-6">{{ product.description }}</p>
-        
-        <!-- Pricing -->
-        <div class="mb-4">
-          <span v-if="product.discountPrice" class="text-2xl font-semibold text-red-600 mr-4">
-            {{ product.discountPrice }} RON
-          </span>
-          <span v-if="product.discountPrice" class="text-lg line-through text-gray-500">
-            {{ product.price }} RON
-          </span>
-          <span v-else class="text-2xl font-semibold text-gray-800">
-            {{ product.price }} RON
-          </span>
+        <div class="mt-6" v-if="product.colors && product.colors.length">
+          <h2 class="text-xl font-semibold text-gray-800">Alege o culoare:</h2>
+          <div class="flex mt-2">
+            <template v-for="color in product.colors" :key="color">
+              <button
+                class="w-8 h-8 rounded-full mr-2 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                :style="{ backgroundColor: color.toLowerCase() }"
+                :class="{
+                  'border border-black': color.toLowerCase() === 'white' || color.toLowerCase() === 'lightgray',
+                  'ring ring-blue-500': selectedColor === color
+                }"
+                @click="selectColor(color)"
+              ></button>
+            </template>
+          </div>
         </div>
 
-        <!-- Add to Cart Button -->
-        <button 
-          @click="addToCart(product)" 
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+        <button
+          @click="addToCart"
+          class="mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none"
         >
-          Add to Cart
+          Adaugă în coș
         </button>
-
-        <!-- Feedback after adding to cart -->
-        <div v-if="cartMessage" class="mt-4 text-green-500 font-semibold">
-          {{ cartMessage }}
+        <div v-if="addedToCart" class="mt-2 text-green-600">
+          ✔ Produsul a fost adăugat în coș!
         </div>
       </div>
+    </div>
+
+    <div v-else class="text-center">
+      <p>Se încarcă produsul...</p>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 import axios from "axios";
+import { mapActions } from "vuex"; // Asigură-te că importul este aici
 
 export default {
   data() {
     return {
       product: null,
-      cartMessage: "",
+      selectedColor: "",
+      addedToCart: false,
     };
   },
   methods: {
-    ...mapActions(["addToCartAction"]),
-    
-    // Fetch product by ID
+    ...mapActions(["addToCartAction"]), // Folosește mapActions pentru a adăuga acțiunea
+
+    formatPrice(price) {
+      return new Intl.NumberFormat("ro-RO", {
+        style: "currency",
+        currency: "RON",
+      }).format(price);
+    },
+    selectColor(color) {
+      this.selectedColor = color;
+    },
+    addToCart() {
+      if (!this.selectedColor) {
+        alert("Te rog să selectezi o culoare înainte de a adăuga produsul în coș.");
+        return;
+      }
+      const productWithColor = { ...this.product, selectedColor: this.selectedColor };
+
+      // Adăugăm produsul în coș folosind Vuex
+      this.addToCartAction(productWithColor);
+      this.addedToCart = true;
+
+      setTimeout(() => {
+        this.addedToCart = false;
+      }, 3000);
+    },
     fetchProduct() {
       const productId = this.$route.params.id;
       axios.get(`http://localhost:3000/products/${productId}`)
-        .then(response => {
+        .then((response) => {
           this.product = response.data;
         })
-        .catch(error => {
-          console.error("Error fetching product:", error);
+        .catch((error) => {
+          console.error("Eroare la obținerea produsului:", error);
         });
     },
-
-    // Add product to cart
-    addToCart(product) {
-      this.addToCartAction(product);
-      this.cartMessage = `${product.name} was added to your cart!`;
-      
-      // Clear message after 3 seconds
-      setTimeout(() => {
-        this.cartMessage = "";
-      }, 3000);
-    }
   },
   created() {
     this.fetchProduct();
-  }
+  },
 };
 </script>
 
 <style scoped>
-.container {
-  max-width: 1200px;
-}
+/* Stiluri personalizate */
 </style>

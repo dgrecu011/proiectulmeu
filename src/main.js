@@ -1,3 +1,4 @@
+// src/main.js
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
@@ -7,7 +8,10 @@ import axios from "axios";
 
 const app = createApp(App);
 
+// Folosește Vue Router
 app.use(router);
+
+// Folosește Vuex
 app.use(store);
 
 // Folosește Axios pentru a face o cerere API
