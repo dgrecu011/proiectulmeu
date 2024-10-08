@@ -19,6 +19,14 @@
           <h3 class="text-xl font-semibold mt-4">{{ product.name }}</h3>
           <p class="text-gray-500">{{ product.description }}</p>
           <p class="text-lg font-bold mt-2 text-indigo-600">{{ formatPrice(product.price) }} €</p>
+          
+          <!-- Color selection using the new component -->
+          <color-selector
+            :colors="product.colors.map(color => color.toLowerCase())" 
+            :selected-color="product.selectedColor" 
+            @color-selected="updateColor(product, $event)"
+          ></color-selector>
+
           <div class="flex justify-between items-center mt-4">
             <router-link :to="`/product/${product.id}`" class="text-indigo-600 hover:underline">View Details</router-link>
             <button
@@ -56,8 +64,12 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import ColorSelector from "../components/ColorSelector.vue";
 
 export default {
+  components: {
+    ColorSelector,
+  },
   data() {
     return {
       products: [],
@@ -78,7 +90,7 @@ export default {
       }
     },
     addToCart(product) {
-      this.addToCartAction({ ...product, selectedColor: product.selectedColor }); // Include selectedColor
+      this.addToCartAction(product);
       this.addedToCart = product.id;
       // Setăm badge-ul să dispară după 3 secunde
       setTimeout(() => {
@@ -87,6 +99,9 @@ export default {
     },
     formatPrice(price) {
       return price.toFixed(2);
+    },
+    updateColor(product, color) {
+      product.selectedColor = color; // Update the selected color of the product
     },
   },
   mounted() {
