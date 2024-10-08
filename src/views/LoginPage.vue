@@ -1,9 +1,13 @@
 <template>
   <div class="container mx-auto p-4">
     <!-- Header principal -->
-    <section class="text-center py-12 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white rounded-lg">
+    <section
+      class="text-center py-12 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white rounded-lg"
+    >
       <h1 class="text-4xl font-bold">Autentificare</h1>
-      <p class="mt-4 text-lg">Conectează-te la contul tău pentru a accesa toate funcționalitățile!</p>
+      <p class="mt-4 text-lg">
+        Conectează-te la contul tău pentru a accesa toate funcționalitățile!
+      </p>
     </section>
 
     <!-- Formular de autentificare -->
@@ -37,8 +41,10 @@
         </button>
       </form>
       <p class="mt-4 text-center">
-        Nu ai un cont? 
-        <router-link to="/register" class="text-blue-600 hover:underline">Înscrie-te acum!</router-link>
+        Nu ai un cont?
+        <router-link to="/register" class="text-blue-600 hover:underline"
+          >Înscrie-te acum!</router-link
+        >
       </p>
     </section>
 
@@ -53,19 +59,24 @@
 export default {
   data() {
     return {
-      email: '',
-      password: '',
-      error: '',
+      email: "",
+      password: "",
+      error: "",
     };
   },
   methods: {
     login() {
-      // Aici poți adăuga logica de autentificare, de exemplu, un apel API
-      if (this.email === 'test@example.com' && this.password === 'password') {
-        // Logica de redirecționare după autentificare
-        this.$router.push('/'); // Redirecționează la pagina principală după autentificare
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const user = users.find(
+        (user) => user.email === this.email && user.password === this.password
+      );
+
+      if (user) {
+        // Folosește Vuex pentru a gestiona autentificarea
+        this.$store.dispatch("loginUser", user);
+        this.$router.push("/");
       } else {
-        this.error = 'Email sau parolă incorectă.';
+        this.error = "Email sau parolă incorectă.";
       }
     },
   },

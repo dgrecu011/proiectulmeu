@@ -1,70 +1,48 @@
-import { createStore } from 'vuex';
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
     cart: [],
+    loggedInUser: JSON.parse(localStorage.getItem("loggedInUser")) || null,
   },
   mutations: {
+    setLoggedInUser(state, user) {
+      state.loggedInUser = user;
+    },
+    logoutUser(state) {
+      state.loggedInUser = null;
+      localStorage.removeItem("loggedInUser");
+    },
     addToCart(state, product) {
-      // Check if the product already exists in the cart
       const existingProduct = state.cart.find(
-        item => item.id === product.id && item.selectedColor === product.selectedColor
+        (item) =>
+          item.id === product.id && item.selectedColor === product.selectedColor
       );
-
       if (existingProduct) {
-        existingProduct.quantity++; // Increment the quantity if it already exists
+        existingProduct.quantity++;
       } else {
-        // Add the product to the cart with an initial quantity of 1
         state.cart.push({ ...product, quantity: 1 });
       }
     },
-    
-    removeFromCart(state, { productId, selectedColor }) {
-      const index = state.cart.findIndex(
-        item => item.id === productId && item.selectedColor === selectedColor
-      );
-
-      if (index !== -1) {
-        state.cart.splice(index, 1); // Remove the product if found
-      }
-    },
-    
-    updateQuantity(state, { productId, selectedColor, quantity }) {
-      const product = state.cart.find(
-        item => item.id === productId && item.selectedColor === selectedColor
-      );
-
-      if (product) {
-        product.quantity = quantity; // Update the quantity
-      }
-    },
-    
-    removeAllFromCart(state) {
-      state.cart = []; // Empty the cart
-    },
   },
   actions: {
-    addToCartAction({ commit }, product) {
-      commit('addToCart', product);
+    loginUser({ commit }, user) {
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      commit("setLoggedInUser", user);
     },
-    removeFromCartAction({ commit }, { productId, selectedColor }) {
-      commit('removeFromCart', { productId, selectedColor });
-    },
-    updateQuantityAction({ commit }, payload) {
-      commit('updateQuantity', payload);
-    },
-    removeAllFromCartAction({ commit }) {
-      commit('removeAllFromCart');
+    logoutUserAction({ commit }) {
+      commit("logoutUser");
     },
   },
   getters: {
     cart(state) {
-      return state.cart; // Return the cart products
+      return state.cart;
     },
-    totalPrice(state) {
-      return state.cart.reduce((total, item) => {
-        return total + (item.discountPrice || item.price) * item.quantity;
-      }, 0); // Calculate the total price
+    loggedInUser(state) {
+      return state.loggedInUser;
+    },
+    isLoggedIn(state) {
+      return !!state.loggedInUser;
     },
   },
 });
