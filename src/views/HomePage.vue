@@ -78,7 +78,7 @@ export default {
       }
     },
     addToCart(product) {
-      this.addToCartAction(product);
+      this.addToCartAction({ ...product, selectedColor: product.selectedColor }); // Include selectedColor
       this.addedToCart = product.id;
       // Setăm badge-ul să dispară după 3 secunde
       setTimeout(() => {

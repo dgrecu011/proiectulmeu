@@ -1,4 +1,3 @@
-// src/store/index.js
 import { createStore } from 'vuex';
 
 export default createStore({
@@ -8,15 +7,15 @@ export default createStore({
   mutations: {
     // Add product to the cart
     addToCart(state, product) {
-      // Check for existing product with the same ID and selected color
+      // Verificăm dacă produsul există deja în coș
       const existingProduct = state.cart.find(
         item => item.id === product.id && item.selectedColor === product.selectedColor
       );
-      
+
       if (existingProduct) {
-        existingProduct.quantity++; // Increment quantity if exists
+        existingProduct.quantity++; // Incrementăm cantitatea dacă există deja
       } else {
-        // Add new product to the cart with a quantity of 1
+        // Adăugăm produsul în coș cu o cantitate de 1
         state.cart.push({ ...product, quantity: 1 });
       }
     },
@@ -26,9 +25,9 @@ export default createStore({
       const index = state.cart.findIndex(
         item => item.id === productId && item.selectedColor === selectedColor
       );
-      
+
       if (index !== -1) {
-        state.cart.splice(index, 1); // Remove item if found
+        state.cart.splice(index, 1); // Îndepărtăm produsul dacă este găsit
       }
     },
     
@@ -37,15 +36,15 @@ export default createStore({
       const product = state.cart.find(
         item => item.id === productId && item.selectedColor === selectedColor
       );
-      
+
       if (product) {
-        product.quantity = quantity; // Update quantity
+        product.quantity = quantity; // Actualizăm cantitatea
       }
     },
     
     // Remove all products from the cart
     removeAllFromCart(state) {
-      state.cart = []; // Clear the cart
+      state.cart = []; // Golim coșul
     },
   },
   actions: {
@@ -64,12 +63,12 @@ export default createStore({
   },
   getters: {
     cart(state) {
-      return state.cart; // Return the cart items
+      return state.cart; // Returnăm produsele din coș
     },
     totalPrice(state) {
       return state.cart.reduce((total, item) => {
         return total + (item.discountPrice || item.price) * item.quantity;
-      }, 0); // Calculate total price
+      }, 0); // Calculăm prețul total
     },
   },
 });
