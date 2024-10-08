@@ -13,12 +13,12 @@
     <!-- Cart Items -->
     <div v-else>
       <div class="flex flex-col space-y-4">
-        <div v-for="item in cart" :key="item.id" class="flex items-center justify-between bg-white p-4 rounded-lg shadow-lg">
+        <div v-for="item in cart" :key="`${item.id}-${item.selectedColor}`" class="flex items-center justify-between bg-white p-4 rounded-lg shadow-lg">
           <!-- Product Info -->
           <div class="flex items-center">
             <img :src="item.image" :alt="item.name" class="w-20 h-20 object-cover rounded-lg mr-4" />
             <div>
-              <h2 class="text-xl font-semibold">{{ item.name }}</h2>
+              <h2 class="text-xl font-semibold">{{ item.name }} - {{ item.selectedColor }}</h2>
               <p class="text-gray-600">{{ item.description }}</p>
               <p class="text-red-600 font-bold">{{ item.discountPrice || item.price }} RON</p>
             </div>
@@ -43,13 +43,21 @@
 
           <!-- Remove Button -->
           <button 
-            @click="removeFromCart(item.id)" 
+            @click="removeFromCart(item.id, item.selectedColor)" 
             class="text-red-600 hover:underline"
           >
             Remove
           </button>
         </div>
       </div>
+
+      <!-- Remove All Button -->
+      <button 
+        @click="removeAll" 
+        class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+      >
+        Remove All
+      </button>
 
       <!-- Total Price -->
       <div class="mt-6 flex justify-between items-center">
@@ -73,22 +81,27 @@ export default {
     ...mapGetters(["cart", "totalPrice"]),
   },
   methods: {
-    ...mapActions(["removeFromCartAction", "updateQuantityAction"]),
-    
+    ...mapActions(["removeFromCartAction", "removeAllFromCartAction", "updateQuantityAction"]),
+
     // Remove item from cart
-    removeFromCart(productId) {
-      this.removeFromCartAction(productId);
+    removeFromCart(productId, selectedColor) {
+      this.removeFromCartAction({ productId, selectedColor });
     },
-    
+
+    // Remove all items from the cart
+    removeAll() {
+      this.removeAllFromCartAction();
+    },
+
     // Update product quantity in cart
     updateQuantity(item, action) {
       if (action === "increase") {
-        this.updateQuantityAction({ productId: item.id, quantity: item.quantity + 1 });
+        this.updateQuantityAction({ productId: item.id, selectedColor: item.selectedColor, quantity: item.quantity + 1 });
       } else if (action === "decrease" && item.quantity > 1) {
-        this.updateQuantityAction({ productId: item.id, quantity: item.quantity - 1 });
+        this.updateQuantityAction({ productId: item.id, selectedColor: item.selectedColor, quantity: item.quantity - 1 });
       }
     },
-    
+
     // Proceed to checkout (placeholder for now)
     checkout() {
       alert("Proceeding to checkout...");
@@ -96,9 +109,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.container {
-  max-width: 1200px;
-}
-</style>

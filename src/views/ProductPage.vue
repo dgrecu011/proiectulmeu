@@ -55,7 +55,7 @@
 
 <script>
 import axios from "axios";
-import { mapActions } from "vuex"; // Asigură-te că importul este aici
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -66,7 +66,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addToCartAction"]), // Folosește mapActions pentru a adăuga acțiunea
+    ...mapActions(["addToCartAction"]),
 
     formatPrice(price) {
       return new Intl.NumberFormat("ro-RO", {
