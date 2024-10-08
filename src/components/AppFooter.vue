@@ -18,7 +18,6 @@
         <h3 class="font-semibold">Useful Links</h3>
         <ul class="flex flex-col md:flex-row md:space-x-6 mt-2">
           <li><router-link to="/about" class="hover:text-yellow-400 transition duration-300 ease-in-out">About Us</router-link></li>
-          <li><router-link to="/products" class="hover:text-yellow-400 transition duration-300 ease-in-out">Products</router-link></li>
           <li><router-link to="/contact" class="hover:text-yellow-400 transition duration-300 ease-in-out">Contact</router-link></li>
           <li><router-link to="/login" class="hover:text-yellow-400 transition duration-300 ease-in-out">Login</router-link></li>
         </ul>

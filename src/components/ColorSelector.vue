@@ -57,4 +57,7 @@ export default {
 .color-option:hover {
   border: 2px solid #000; /* Bordură pentru opțiunile hover */
 }
+.color-option.white {
+    border: 2px solid #000; /* Bordură neagră pentru culoarea albă */
+}   
 </style>
