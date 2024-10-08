@@ -10,27 +10,115 @@
     },
     {
       "id": 2,
+      "name": "iPhone 12 Pro",
+      "description": "Modelul Pro cu camere avansate și performanțe ridicate.",
+      "price": 1299,
+      "image": "https://example.com/iphone12pro.jpg",
+      "colors": ["Graphite", "Silver", "Gold", "Pacific Blue"]
+    },
+    {
+      "id": 3,
       "name": "iPhone 13",
       "description": "Cel mai nou model de iPhone, cu îmbunătășiri semnificative.",
       "price": 1199,
       "image": "https://example.com/iphone13.jpg",
-      "colors": ["Pink", "Blue", "Red"]
-    },
-    {
-      "id": 3,
-      "name": "Samsung Galaxy S21",
-      "description": "Un telefon premium cu tehnologie de vârf.",
-      "price": 899,
-      "image": "https://example.com/galaxy-s21.jpg",
-      "colors": ["Black", "White"]
+      "colors": ["Pink", "Blue", "Red", "Starlight", "Midnight"]
     },
     {
       "id": 4,
-      "name": "OnePlus 9",
-      "description": "Performanță excelentă la un preț accesibil.",
-      "price": 749,
-      "image": "https://example.com/oneplus-9.jpg",
-      "colors": ["Black", "Silver"]
+      "name": "iPhone 13 Mini",
+      "description": "Model compact cu toate funcțiile iPhone 13.",
+      "price": 899,
+      "image": "https://example.com/iphone13mini.jpg",
+      "colors": ["Pink", "Blue", "Red", "Starlight", "Midnight"]
+    },
+    {
+      "id": 5,
+      "name": "iPhone 13 Pro",
+      "description": "Cel mai avansat model cu tehnologii inovatoare.",
+      "price": 1399,
+      "image": "https://example.com/iphone13pro.jpg",
+      "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"]
+    },
+    {
+      "id": 6,
+      "name": "iPhone 13 Pro Max",
+      "description": "Performanță maximă și o cameră excepțională.",
+      "price": 1599,
+      "image": "https://example.com/iphone13promax.jpg",
+      "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"]
+    },
+    {
+      "id": 7,
+      "name": "iPhone 14",
+      "description": "Experiență de utilizare îmbunătățită cu un design elegant.",
+      "price": 1099,
+      "image": "https://example.com/iphone14.jpg",
+      "colors": ["Midnight", "Starlight", "Blue", "Purple", "Red"]
+    },
+    {
+      "id": 8,
+      "name": "iPhone 14 Plus",
+      "description": "Model mai mare pentru o experiență de vizualizare excelentă.",
+      "price": 1199,
+      "image": "https://example.com/iphone14plus.jpg",
+      "colors": ["Midnight", "Starlight", "Blue", "Purple", "Red"]
+    },
+    {
+      "id": 9,
+      "name": "iPhone 14 Pro",
+      "description": "Cel mai bun model cu tehnologie de vârf și camera profesională.",
+      "price": 1399,
+      "image": "https://example.com/iphone14pro.jpg",
+      "colors": ["Space Black", "Silver", "Gold", "Deep Purple"]
+    },
+    {
+      "id": 10,
+      "name": "iPhone 14 Pro Max",
+      "description": "Modelul suprem cu cea mai bună cameră și durabilitate.",
+      "price": 1599,
+      "image": "https://example.com/iphone14promax.jpg",
+      "colors": ["Space Black", "Silver", "Gold", "Deep Purple"]
+    },
+    {
+      "id": 11,
+      "name": "iPhone SE (2022)",
+      "description": "Model accesibil cu performanțe de top.",
+      "price": 499,
+      "image": "https://example.com/iphonese2022.jpg",
+      "colors": ["Midnight", "Starlight", "Product Red"]
+    },
+    {
+      "id": 12,
+      "name": "iPhone 11",
+      "description": "Un model mai vechi cu performanțe excelente și un preț atractiv.",
+      "price": 699,
+      "image": "https://example.com/iphone11.jpg",
+      "colors": ["Black", "White", "Green", "Yellow", "Purple", "Red"]
+    },
+    {
+      "id": 13,
+      "name": "iPhone 11 Pro",
+      "description": "Performanță excepțională cu un sistem de camere triplu.",
+      "price": 999,
+      "image": "https://example.com/iphone11pro.jpg",
+      "colors": ["Space Gray", "Silver", "Gold"]
+    },
+    {
+      "id": 14,
+      "name": "iPhone 11 Pro Max",
+      "description": "Modelul de top din seria iPhone 11 cu cea mai bună cameră.",
+      "price": 1099,
+      "image": "https://example.com/iphone11promax.jpg",
+      "colors": ["Space Gray", "Silver", "Gold"]
+    },
+    {
+      "id": 15,
+      "name": "iPhone XR",
+      "description": "Model cu un ecran mare și culori vibrante.",
+      "price": 599,
+      "image": "https://example.com/iphonexr.jpg",
+      "colors": ["Black", "White", "Blue", "Yellow", "Coral", "Product Red"]
     }
   ]
 }
