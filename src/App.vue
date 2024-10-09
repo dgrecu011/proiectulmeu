@@ -2,7 +2,7 @@
   <div id="app" class="flex flex-col min-h-screen">
     <AppHeader />
     <router-view class="flex-grow" />
-    <!-- This allows the main content to take the available space -->
+   
     <AppFooter />
   </div>
 </template>
@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style>
-/* Global Styles */
+
 </style>

@@ -58,12 +58,12 @@
       </div>
     </div>
 
-    <!-- Aici este blocul else, trebuie să fie în afara blocului v-if de mai sus -->
+    
     <div v-else class="text-center">
       <p>Se încarcă produsul...</p>
     </div>
 
-    <!-- Secțiune de specificații -->
+  
     <div v-if="product" class="mt-8">
       <h2 class="text-2xl font-bold text-gray-800">Specificații</h2>
       <ul class="list-disc ml-5 mt-2">
@@ -77,7 +77,7 @@
       </ul>
     </div>
 
-    <!-- Secțiune de produse similare -->
+    
     <div v-if="similarProducts.length" class="mt-8">
       <h2 class="text-2xl font-bold text-gray-800">Produse similare</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,5 +196,5 @@ export default {
 </script>
 
 <style scoped>
-/* Stiluri personalizate */
+
 </style>

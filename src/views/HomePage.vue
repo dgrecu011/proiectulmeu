@@ -1,12 +1,12 @@
 <template>
   <div class="container mx-auto p-4">
-    <!-- Header principal -->
+    
     <section class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg">
       <h1 class="text-4xl font-bold">Welcome to Our iPhone Store!</h1>
       <p class="mt-4 text-lg">Discover the latest iPhones with exclusive offers and discounts.</p>
     </section>
 
-    <!-- Produse recomandate -->
+ 
     <section class="my-12">
       <h2 class="text-3xl font-semibold text-center mb-6">Featured Products</h2>
       <div class="flex justify-center mb-4">
@@ -45,7 +45,7 @@
       </div>
     </section>
 
-    <!-- Bannere promotionale -->
+   
     <section class="bg-gray-100 py-12 mt-16">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-gradient-to-r from-green-400 to-blue-500 p-8 text-white rounded-lg shadow-lg">
@@ -123,7 +123,7 @@ export default {
       product.selectedColor = color;
     },
     sortProducts() {
-      // This method can be left empty as sorting is done via computed property
+     
     },
   },
   mounted() {

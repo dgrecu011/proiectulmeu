@@ -7,6 +7,7 @@ import AboutPage from "../views/AboutPage.vue";
 import ContactPage from "../views/ContactPage.vue";
 import RegisterPage from "@/views/RegisterPage.vue";
 import CheckoutPage from "../views/CheckoutPage.vue";
+import UserProfile from "@/views/UserProfile.vue";
 
 const routes = [
   { path: "/", component: HomePage },
@@ -17,17 +18,18 @@ const routes = [
   { path: "/contact", component: ContactPage },
   { path: "/register", component: RegisterPage },
   { path: "/checkout", name: "Checkout", component: CheckoutPage },
+  { path: "/profile", name: "Profile", component: UserProfile },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // Dacă există o poziție salvată, folosește-o
+    
     if (savedPosition) {
       return savedPosition;
     } else {
-      // Mergi la începutul paginii
+      
       return { top: 0 };
     }
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <!-- Header principal -->
+    
     <section
       class="text-center py-12 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white rounded-lg"
     >
@@ -10,7 +10,7 @@
       </p>
     </section>
 
-    <!-- Formular de autentificare -->
+    
     <section class="my-12 bg-gray-100 p-6 rounded-lg shadow-lg">
       <form @submit.prevent="login" class="space-y-4">
         <div>
@@ -48,7 +48,7 @@
       </p>
     </section>
 
-    <!-- Mesaj de eroare -->
+    
     <div v-if="error" class="mt-4 text-red-600 text-center">
       {{ error }}
     </div>
@@ -85,6 +85,6 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 600px; /* Limitez lățimea formularului */
+  max-width: 600px; 
 }
 </style>

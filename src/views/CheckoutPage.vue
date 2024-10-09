@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-6">
-    <!-- Header principal -->
+  
     <section
       class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg"
     >
@@ -169,21 +169,21 @@ export default {
     },
 
     placeOrder() {
-      // Clear the cart after placing the order
+     
       this.$store.commit("removeAllFromCart");
 
-      // Show the modal
+    
       this.showModal = true;
 
-      // Redirect to homepage after 3 seconds
+
       setTimeout(() => {
         this.redirectNow();
       }, 3000);
     },
 
     redirectNow() {
-      this.showModal = false; // Close the modal
-      this.$router.push("/"); // Redirect to home page
+      this.showModal = false;
+      this.$router.push("/"); 
     },
   },
 };
@@ -198,7 +198,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>

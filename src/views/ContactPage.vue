@@ -1,12 +1,12 @@
 <template>
   <div class="container mx-auto p-4">
-    <!-- Header principal -->
+   
     <section class="text-center py-12 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white rounded-lg">
       <h1 class="text-4xl font-bold">Contactează-ne</h1>
       <p class="mt-4 text-lg">Suntem aici să te ajutăm!</p>
     </section>
 
-    <!-- Informații de contact -->
+  
     <section class="my-12 bg-gray-100 p-6 rounded-lg shadow-lg">
       <h2 class="text-3xl font-semibold text-center mb-6">Informații de Contact</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -25,7 +25,6 @@
       </div>
     </section>
 
-    <!-- Formular de contact -->
     <section class="my-12">
       <h2 class="text-3xl font-semibold text-center mb-6">Trimite-ne un mesaj</h2>
       <form @submit.prevent="sendMessage" class="bg-gray-100 p-6 rounded-lg shadow-lg">
@@ -70,7 +69,7 @@
       </form>
     </section>
 
-    <!-- Hartă -->
+ 
     <section class="my-12">
       <h2 class="text-3xl font-semibold text-center mb-6">Ne găsești aici</h2>
       <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
@@ -96,9 +95,9 @@ export default {
   },
   methods: {
     sendMessage() {
-      // Aici poți adăuga logica pentru a trimite mesajul la server sau a-l salva local
+      
       console.log("Mesaj trimis:", { name: this.name, email: this.email, message: this.message });
-      // Resetăm formularul după trimitere
+      
       this.name = '';
       this.email = '';
       this.message = '';

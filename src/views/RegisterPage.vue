@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <!-- Header principal -->
+    
     <section
       class="text-center py-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-lg"
     >
@@ -10,7 +10,7 @@
       </p>
     </section>
 
-    <!-- Formular de înregistrare -->
+    
     <section class="my-12 bg-gray-100 p-6 rounded-lg shadow-lg">
       <form @submit.prevent="register" class="space-y-4">
         <div>
@@ -58,7 +58,7 @@
       </p>
     </section>
 
-    <!-- Mesaj de eroare -->
+   
     <div v-if="error" class="mt-4 text-red-600 text-center">
       {{ error }}
     </div>
@@ -78,7 +78,7 @@ export default {
   methods: {
     register() {
       if (this.name && this.email && this.password) {
-        // Save user data to localStorage
+        
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const userExists = users.find((user) => user.email === this.email);
 
@@ -94,7 +94,7 @@ export default {
         });
         localStorage.setItem("users", JSON.stringify(users));
 
-        // Redirect to login after registration
+        
         this.$router.push("/login");
       } else {
         this.error = "Te rog completează toate câmpurile.";
@@ -106,6 +106,6 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 600px; /* Limitez lățimea formularului */
+  max-width: 600px;
 }
 </style>
