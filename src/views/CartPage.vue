@@ -2,7 +2,6 @@
   <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-6">Your Shopping Cart</h1>
 
-    <!-- If the cart is empty -->
     <div v-if="cart.length === 0" class="text-center">
       <p class="text-xl">Your cart is empty.</p>
       <router-link to="/" class="text-blue-600 hover:underline mt-4 block">
@@ -10,11 +9,9 @@
       </router-link>
     </div>
 
-    <!-- Cart Items -->
     <div v-else>
       <div class="flex flex-col space-y-4">
         <div v-for="item in cart" :key="`${item.id}-${item.selectedColor}`" class="flex items-center justify-between bg-white p-4 rounded-lg shadow-lg">
-          <!-- Product Info -->
           <div class="flex items-center">
             <img :src="item.image" :alt="item.name" class="w-20 h-20 object-cover rounded-lg mr-4" />
             <div>
@@ -24,7 +21,6 @@
             </div>
           </div>
 
-          <!-- Quantity Selector -->
           <div class="flex items-center space-x-2">
             <button 
               @click="updateQuantity(item, 'decrease')" 
@@ -41,7 +37,6 @@
             </button>
           </div>
 
-          <!-- Remove Button -->
           <button 
             @click="removeFromCart(item.id, item.selectedColor)" 
             class="text-red-600 hover:underline"
@@ -51,7 +46,6 @@
         </div>
       </div>
 
-      <!-- Remove All Button -->
       <button 
         @click="removeAll" 
         class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
@@ -59,7 +53,6 @@
         Remove All
       </button>
 
-      <!-- Total Price -->
       <div class="mt-6 flex justify-between items-center">
         <p class="text-2xl font-semibold">Total: {{ totalPrice }} RON</p>
         <button 
@@ -83,17 +76,14 @@ export default {
   methods: {
     ...mapActions(["removeFromCartAction", "removeAllFromCartAction", "updateQuantityAction"]),
 
-    // Remove item from cart
     removeFromCart(productId, selectedColor) {
       this.removeFromCartAction({ productId, selectedColor });
     },
 
-    // Remove all items from the cart
     removeAll() {
       this.removeAllFromCartAction();
     },
 
-    // Update product quantity in cart
     updateQuantity(item, action) {
       if (action === "increase") {
         this.updateQuantityAction({ productId: item.id, selectedColor: item.selectedColor, quantity: item.quantity + 1 });
@@ -102,10 +92,15 @@ export default {
       }
     },
 
-    // Proceed to checkout (placeholder for now)
     checkout() {
       alert("Proceeding to checkout...");
     }
   }
 };
 </script>
+
+<style scoped>
+.container {
+  max-width: 1200px;
+}
+</style>

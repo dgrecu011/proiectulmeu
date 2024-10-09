@@ -32,7 +32,7 @@
 
           <!-- Color selection using the new component -->
           <color-selector
-            :colors="product.colors.map((color) => color.toLowerCase())"
+            :colors="product.colors.map(color => color.toLowerCase())"
             :selected-color="product.selectedColor"
             @color-selected="updateColor(product, $event)"
           ></color-selector>
@@ -41,8 +41,7 @@
             <router-link
               :to="`/product/${product.id}`"
               class="text-indigo-600 hover:underline"
-              >View Details</router-link
-            >
+            >View Details</router-link>
             <button
               @click="addToCart(product)"
               class="bg-indigo-600 text-white px-4 py-2 rounded-lg"
@@ -73,8 +72,7 @@
           <router-link
             to="/shop"
             class="inline-block mt-6 bg-white text-green-600 font-bold px-6 py-2 rounded-lg"
-            >Shop Now</router-link
-          >
+          >Shop Now</router-link>
         </div>
         <div
           class="bg-gradient-to-r from-yellow-400 to-red-500 p-8 text-white rounded-lg shadow-lg"
@@ -88,8 +86,7 @@
           <router-link
             to="/shop"
             class="inline-block mt-6 bg-white text-red-600 font-bold px-6 py-2 rounded-lg"
-            >Explore Now</router-link
-          >
+          >Explore Now</router-link>
         </div>
       </div>
     </section>
@@ -119,12 +116,21 @@ export default {
       try {
         const response = await fetch("http://localhost:3000/products");
         this.products = await response.json();
+        
+        // Asigură-te că selectedColor are o valoare implicită
+        this.products.forEach(product => {
+          if (!product.selectedColor) {
+            product.selectedColor = product.colors[0].toLowerCase(); // Setează prima culoare ca valoare implicită
+          }
+        });
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     },
     addToCart(product) {
-      this.addToCartAction(product);
+      const color = product.selectedColor || null; // Nu convertim culoarea
+      const productToAdd = { ...product, selectedColor: color }; // Folosim culoarea așa cum este
+      this.addToCartAction(productToAdd);
       this.addedToCart = product.id;
       // Setăm badge-ul să dispară după 3 secunde
       setTimeout(() => {
@@ -135,7 +141,7 @@ export default {
       return price.toFixed(2);
     },
     updateColor(product, color) {
-      product.selectedColor = color; // Update the selected color of the product
+      product.selectedColor = color.toLowerCase(); // Convertim culoarea la litere mici
     },
   },
   mounted() {

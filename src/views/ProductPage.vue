@@ -75,7 +75,7 @@ export default {
       }).format(price);
     },
     selectColor(color) {
-      this.selectedColor = color;
+      this.selectedColor = color.toLowerCase(); // Convertim culoarea la litere mici
     },
     addToCart() {
       if (!this.selectedColor) {
@@ -97,6 +97,8 @@ export default {
       axios.get(`http://localhost:3000/products/${productId}`)
         .then((response) => {
           this.product = response.data;
+          // Setăm culoarea selectată inițial
+          this.selectedColor = this.product.colors[0].toLowerCase(); // Setează prima culoare ca valoare implicită
         })
         .catch((error) => {
           console.error("Eroare la obținerea produsului:", error);

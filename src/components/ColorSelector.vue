@@ -1,14 +1,14 @@
 <template>
-    <div class="color-selector">
-      <div
-        v-for="color in colors"
-        :key="color"
-        class="color-option"
-        :style="{ backgroundColor: color }"
-        :class="{ selected: selectedColor === color }"
-        @click="selectColor(color)"
-      ></div>
-    </div>
+  <div class="color-selector">
+    <div
+      v-for="color in colors"
+      :key="color"
+      class="color-option"
+      :style="{ backgroundColor: color }"
+      :class="{ selected: selectedColor === color }"
+      @click="selectColor(color)"
+    ></div>
+  </div>
 </template>
 
 <script>
@@ -57,7 +57,4 @@ export default {
 .color-option:hover {
   border: 2px solid #000; /* Bordură pentru opțiunile hover */
 }
-.color-option.white {
-    border: 2px solid #000; /* Bordură neagră pentru culoarea albă */
-}   
 </style>

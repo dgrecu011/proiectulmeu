@@ -24,6 +24,22 @@ export default createStore({
         state.cart.push({ ...product, quantity: 1 });
       }
     },
+    removeFromCart(state, { productId, selectedColor }) {
+      state.cart = state.cart.filter(
+        (item) => !(item.id === productId && item.selectedColor === selectedColor)
+      );
+    },
+    removeAllFromCart(state) {
+      state.cart = [];
+    },
+    updateQuantity(state, { productId, selectedColor, quantity }) {
+      const item = state.cart.find(
+        (item) => item.id === productId && item.selectedColor === selectedColor
+      );
+      if (item) {
+        item.quantity = quantity;
+      }
+    },
   },
   actions: {
     loginUser({ commit }, user) {
@@ -32,6 +48,18 @@ export default createStore({
     },
     logoutUserAction({ commit }) {
       commit("logoutUser");
+    },
+    addToCartAction({ commit }, product) {
+      commit("addToCart", product);
+    },
+    removeFromCartAction({ commit }, payload) {
+      commit("removeFromCart", payload);
+    },
+    removeAllFromCartAction({ commit }) {
+      commit("removeAllFromCart");
+    },
+    updateQuantityAction({ commit }, payload) {
+      commit("updateQuantity", payload);
     },
   },
   getters: {
@@ -43,6 +71,12 @@ export default createStore({
     },
     isLoggedIn(state) {
       return !!state.loggedInUser;
+    },
+    totalPrice(state) {
+      return state.cart.reduce(
+        (total, item) => total + (item.discountPrice || item.price) * item.quantity,
+        0
+      );
     },
   },
 });
