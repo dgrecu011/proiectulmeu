@@ -12,10 +12,19 @@
         <h1 class="text-3xl font-bold text-gray-800">{{ product.name }}</h1>
         <p class="mt-2 text-lg text-gray-600">{{ product.description }}</p>
         <p class="mt-4 text-xl font-semibold text-gray-900">
-          Preț: <span v-if="product.discountPrice" class="line-through text-gray-500">{{ formatPrice(product.price) }}</span>
+          Preț:
+          <span
+            v-if="product.discountPrice"
+            class="line-through text-gray-500"
+            >{{ formatPrice(product.price) }}</span
+          >
         </p>
         <p class="mt-2 text-2xl font-bold text-red-600">
-          {{ product.discountPrice ? formatPrice(product.discountPrice) : formatPrice(product.price) }}
+          {{
+            product.discountPrice
+              ? formatPrice(product.discountPrice)
+              : formatPrice(product.price)
+          }}
         </p>
 
         <div class="mt-6" v-if="product.colors && product.colors.length">
@@ -26,8 +35,10 @@
                 class="w-8 h-8 rounded-full mr-2 focus:outline-none focus:ring-2 focus:ring-offset-2"
                 :style="{ backgroundColor: color.toLowerCase() }"
                 :class="{
-                  'border border-black': color.toLowerCase() === 'white' || color.toLowerCase() === 'lightgray',
-                  'ring ring-blue-500': selectedColor === color
+                  'border border-black':
+                    color.toLowerCase() === 'white' ||
+                    color.toLowerCase() === 'lightgray',
+                  'ring ring-blue-500': selectedColor === color,
                 }"
                 @click="selectColor(color)"
               ></button>
@@ -47,8 +58,50 @@
       </div>
     </div>
 
+    <!-- Aici este blocul else, trebuie să fie în afara blocului v-if de mai sus -->
     <div v-else class="text-center">
       <p>Se încarcă produsul...</p>
+    </div>
+
+    <!-- Secțiune de specificații -->
+    <div v-if="product" class="mt-8">
+      <h2 class="text-2xl font-bold text-gray-800">Specificații</h2>
+      <ul class="list-disc ml-5 mt-2">
+        <li
+          v-for="(spec, index) in product.specifications"
+          :key="index"
+          class="text-gray-600"
+        >
+          {{ spec }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Secțiune de produse similare -->
+    <div v-if="similarProducts.length" class="mt-8">
+      <h2 class="text-2xl font-bold text-gray-800">Produse similare</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="similarProduct in similarProducts"
+          :key="similarProduct.id"
+          class="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            :src="similarProduct.image"
+            :alt="similarProduct.name"
+            class="w-full h-48 object-contain rounded-t-lg"
+          />
+          <h3 class="text-xl font-semibold mt-4">{{ similarProduct.name }}</h3>
+          <p class="text-lg font-bold mt-2 text-indigo-600">
+            {{ formatPrice(similarProduct.price) }} €
+          </p>
+          <router-link
+            :to="`/product/${similarProduct.id}`"
+            class="text-blue-600 mt-2 inline-block"
+            >Vezi Detalii</router-link
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -63,11 +116,11 @@ export default {
       product: null,
       selectedColor: "",
       addedToCart: false,
+      similarProducts: [],
     };
   },
   methods: {
     ...mapActions(["addToCartAction"]),
-
     formatPrice(price) {
       return new Intl.NumberFormat("ro-RO", {
         style: "currency",
@@ -78,43 +131,61 @@ export default {
       this.selectedColor = color.toLowerCase();
     },
     addToCart() {
-  if (!this.selectedColor) {
-    alert("Te rog să selectezi o culoare înainte de a adăuga produsul în coș.");
-    return;
-  }
-  const productWithColor = { ...this.product, selectedColor: this.selectedColor.toLowerCase() }; // Normalizare
+      if (!this.selectedColor) {
+        alert(
+          "Te rog să selectezi o culoare înainte de a adăuga produsul în coș."
+        );
+        return;
+      }
+      const productWithColor = {
+        ...this.product,
+        selectedColor: this.selectedColor.toLowerCase(),
+      };
 
-  // Verificăm dacă produsul există deja în coș
-  const existingProduct = this.$store.getters.cart.find(item => 
-    item.id === productWithColor.id && item.selectedColor.toLowerCase() === productWithColor.selectedColor // Normalizare
-  );
+      const existingProduct = this.$store.getters.cart.find(
+        (item) =>
+          item.id === productWithColor.id &&
+          item.selectedColor.toLowerCase() === productWithColor.selectedColor
+      );
 
-  if (existingProduct) {
-    // Dacă există, actualizăm cantitatea
-    this.$store.dispatch("updateQuantityAction", {
-      productId: existingProduct.id,
-      selectedColor: existingProduct.selectedColor,
-      quantity: existingProduct.quantity + 1,
-    });
-  } else {
-    // Altfel, adăugăm produsul în coș
-    this.addToCartAction(productWithColor);
-  }
+      if (existingProduct) {
+        this.$store.dispatch("updateQuantityAction", {
+          productId: existingProduct.id,
+          selectedColor: existingProduct.selectedColor,
+          quantity: existingProduct.quantity + 1,
+        });
+      } else {
+        this.addToCartAction(productWithColor);
+      }
 
-  this.addedToCart = true;
-  setTimeout(() => {
-    this.addedToCart = false;
-  }, 3000);
-},
+      this.addedToCart = true;
+      setTimeout(() => {
+        this.addedToCart = false;
+      }, 3000);
+    },
     fetchProduct() {
       const productId = this.$route.params.id;
-      axios.get(`http://localhost:3000/products/${productId}`)
+      axios
+        .get(`http://localhost:3000/products/${productId}`)
         .then((response) => {
           this.product = response.data;
           this.selectedColor = this.product.colors[0].toLowerCase();
+          this.fetchSimilarProducts();
         })
         .catch((error) => {
           console.error("Eroare la obținerea produsului:", error);
+        });
+    },
+    fetchSimilarProducts() {
+      axios
+        .get(`http://localhost:3000/products?category=${this.product.category}`)
+        .then((response) => {
+          this.similarProducts = response.data.filter(
+            (item) => item.id !== this.product.id
+          );
+        })
+        .catch((error) => {
+          console.error("Eroare la obținerea produselor similare:", error);
         });
     },
   },

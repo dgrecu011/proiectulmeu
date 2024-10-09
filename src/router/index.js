@@ -11,7 +11,7 @@ import CheckoutPage from "../views/CheckoutPage.vue";
 const routes = [
   { path: "/", component: HomePage },
   { path: "/product/:id", name: "ProductPage", component: ProductPage },
-  { path: "/login", name: "Login", component: LoginPage }, // Added name here
+  { path: "/login", name: "Login", component: LoginPage },
   { path: "/cart", component: CartPage },
   { path: "/about", component: AboutPage },
   { path: "/contact", component: ContactPage },
@@ -22,6 +22,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Dacă există o poziție salvată, folosește-o
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      // Mergi la începutul paginii
+      return { top: 0 };
+    }
+  },
 });
 
 export default router;

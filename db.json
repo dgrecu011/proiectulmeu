@@ -6,7 +6,23 @@
       "description": "Un smartphone cu performanțã remarcabile și un design elegant.",
       "price": 999,
       "image": "https://garagesaleszw.com/wp-content/uploads/2023/11/refurb-iphone-12-black-2020.jpeg",
-      "colors": ["#000000", "#FFFFFF", "#0000FF"]
+      "colors": ["#000000", "#FFFFFF", "#0000FF"],
+      "specifications": [
+        "Display: 6.1 inch",
+        "Greutate: 164 g",
+        "Baterie: 2815 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Un telefon excelent pentru utilizare zilnică!"
+        },
+        {
+          "rating": 4.0,
+          "comment": "Camera este foarte bună, dar bateria ar putea fi mai bună."
+        }
+      ]
     },
     {
       "id": 2,
@@ -14,7 +30,23 @@
       "description": "Modelul Pro cu camere avansate și performanțe ridicate.",
       "price": 1299,
       "image": "https://bestpricegh.com/cdn/shop/products/gold_9f6f0006-2d5b-479a-b495-68021ddd0a17_2048x.jpg?v=1603112378",
-      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700", "#4169E1"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700", "#4169E1"],
+      "specifications": [
+        "Display: 6.1 inch Super Retina XDR",
+        "Greutate: 189 g",
+        "Baterie: 2815 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.8,
+          "comment": "Cel mai bun telefon pe care l-am avut vreodată!"
+        },
+        {
+          "rating": 4.2,
+          "comment": "Un pic scump, dar merită fiecare ban."
+        }
+      ]
     },
     {
       "id": 3,
@@ -22,7 +54,23 @@
       "description": "Cel mai nou model de iPhone, cu îmbunătășiri semnificative.",
       "price": 1199,
       "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1692412588&width=823",
-      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
+      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"],
+      "specifications": [
+        "Display: 6.1 inch Super Retina XDR",
+        "Greutate: 174 g",
+        "Baterie: 3240 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.6,
+          "comment": "Îmbunătățiri notabile față de iPhone 12."
+        },
+        {
+          "rating": 4.3,
+          "comment": "Îmi place designul și performanța."
+        }
+      ]
     },
     {
       "id": 4,
@@ -30,7 +78,23 @@
       "description": "Model compact cu toate funcțiile iPhone 13.",
       "price": 899,
       "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-mini-midnight-2022?wid=2000&hei=1897&fmt=jpeg&qlt=95&.v=1679072980362",
-      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
+      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"],
+      "specifications": [
+        "Display: 5.4 inch Super Retina XDR",
+        "Greutate: 140 g",
+        "Baterie: 2438 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Mărimea este perfectă pentru mine!"
+        },
+        {
+          "rating": 4.1,
+          "comment": "Nu are aceeași durabilitate ca modelul standard."
+        }
+      ]
     },
     {
       "id": 5,
@@ -38,7 +102,23 @@
       "description": "Cel mai avansat model cu tehnologii inovatoare.",
       "price": 1399,
       "image": "https://iplanet.one/cdn/shop/files/iPhone_13_Pro_Max_Alpine_Green_PDP_Image_Position-1A__en-US_73fb822d-b4dd-42da-a2a1-5ad453ce79e8.jpg?v=1691139848&width=493",
-      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
+      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"],
+      "specifications": [
+        "Display: 6.1 inch Super Retina XDR",
+        "Greutate: 204 g",
+        "Baterie: 3095 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.9,
+          "comment": "Un smartphone fantastic, nu am ce să-i reproșez."
+        },
+        {
+          "rating": 4.4,
+          "comment": "Foarte bun pentru fotografie."
+        }
+      ]
     },
     {
       "id": 6,
@@ -46,7 +126,23 @@
       "description": "Performanță maximă și o cameră excepțională.",
       "price": 1599,
       "image": "https://enter.online/images/product/2022/02/enter-apple-iphone-13-pro-max-074.webp",
-      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
+      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"],
+      "specifications": [
+        "Display: 6.7 inch Super Retina XDR",
+        "Greutate: 238 g",
+        "Baterie: 4352 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.8,
+          "comment": "Cel mai bun telefon pentru utilizare intensă."
+        },
+        {
+          "rating": 4.6,
+          "comment": "Bateria ține foarte mult!"
+        }
+      ]
     },
     {
       "id": 7,
@@ -54,7 +150,23 @@
       "description": "Experiență de utilizare îmbunătățită cu un design elegant.",
       "price": 1099,
       "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-14-140500.webp",
-      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
+      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"],
+      "specifications": [
+        "Display: 6.1 inch Super Retina XDR",
+        "Greutate: 172 g",
+        "Baterie: 3279 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.7,
+          "comment": "Foarte mulțumit de performanța generală."
+        },
+        {
+          "rating": 4.2,
+          "comment": "Design elegant, dar prețul este puțin mare."
+        }
+      ]
     },
     {
       "id": 8,
@@ -62,7 +174,23 @@
       "description": "Model mai mare pentru o experiență de vizualizare excelentă.",
       "price": 1199,
       "image": "https://xstore.md/images/product/2022/09/Apple-iPhone-14-Plus-Red-1.png",
-      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
+      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"],
+      "specifications": [
+        "Display: 6.7 inch Super Retina XDR",
+        "Greutate: 203 g",
+        "Baterie: 4325 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Ecranul mare este minunat pentru filme."
+        },
+        {
+          "rating": 4.3,
+          "comment": "Bateria durează mult, perfect pentru utilizarea zilnică."
+        }
+      ]
     },
     {
       "id": 9,
@@ -70,7 +198,23 @@
       "description": "Cel mai bun model cu tehnologie de vârf și camera profesională.",
       "price": 1399,
       "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-14-pro-spaceblack-202404?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712956909430",
-      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
+      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"],
+      "specifications": [
+        "Display: 6.1 inch Super Retina XDR",
+        "Greutate: 206 g",
+        "Baterie: 3200 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.9,
+          "comment": "Imaginile sunt incredibile, camera e superbă."
+        },
+        {
+          "rating": 4.7,
+          "comment": "Un telefon premium, dar costisitor."
+        }
+      ]
     },
     {
       "id": 10,
@@ -78,7 +222,23 @@
       "description": "Modelul suprem cu cea mai bună cameră și durabilitate.",
       "price": 1599,
       "image": "https://darwin.md/images/product/2023/09/darwin-apple-iphone-14-pro-max-256-gb-deep-purple-140352.webp",
-      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
+      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"],
+      "specifications": [
+        "Display: 6.7 inch Super Retina XDR",
+        "Greutate: 240 g",
+        "Baterie: 4323 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 5.0,
+          "comment": "Pur și simplu perfect!"
+        },
+        {
+          "rating": 4.8,
+          "comment": "Cel mai bun telefon pe care l-am folosit."
+        }
+      ]
     },
     {
       "id": 11,
@@ -86,7 +246,23 @@
       "description": "Model accesibil cu performanțe de top.",
       "price": 499,
       "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-se-2022-82684.webp",
-      "colors": ["#000000", "#F5F5DC", "#FF0000"]
+      "colors": ["#000000", "#F5F5DC", "#FF0000"],
+      "specifications": [
+        "Display: 4.7 inch Retina HD",
+        "Greutate: 144 g",
+        "Baterie: 2018 mAh",
+        "Rezistență la apă: IP67"
+      ],
+      "reviews": [
+        {
+          "rating": 4.4,
+          "comment": "Un telefon bun pentru prețul său."
+        },
+        {
+          "rating": 4.1,
+          "comment": "Performanță solidă, dar designul este puțin învechit."
+        }
+      ]
     },
     {
       "id": 12,
@@ -101,6 +277,22 @@
         "#FFFF00",
         "#9370DB",
         "#FF0000"
+      ],
+      "specifications": [
+        "Display: 6.1 inch Liquid Retina HD",
+        "Greutate: 194 g",
+        "Baterie: 3110 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Bun telefon, calitate excelentă."
+        },
+        {
+          "rating": 4.0,
+          "comment": "Își face treaba foarte bine."
+        }
       ]
     },
     {
@@ -109,7 +301,23 @@
       "description": "Performanță excepțională cu un sistem de camere triplu.",
       "price": 999,
       "image": "https://darwin.md/images/product/2023/05/darwin-apple-iphone-11-pro-max-64-gb-gold-251502.webp",
-      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"],
+      "specifications": [
+        "Display: 5.8 inch Super Retina XDR",
+        "Greutate: 188 g",
+        "Baterie: 3046 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.8,
+          "comment": "Camera e excelentă, foarte rapid."
+        },
+        {
+          "rating": 4.5,
+          "comment": "Îmi place foarte mult!"
+        }
+      ]
     },
     {
       "id": 14,
@@ -117,7 +325,23 @@
       "description": "Modelul de top din seria iPhone 11 cu cea mai bună cameră.",
       "price": 1099,
       "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-11-pro-max-251508.webp",
-      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"],
+      "specifications": [
+        "Display: 6.5 inch Super Retina XDR",
+        "Greutate: 226 g",
+        "Baterie: 3969 mAh",
+        "Rezistență la apă: IP68"
+      ],
+      "reviews": [
+        {
+          "rating": 4.7,
+          "comment": "Cel mai bun model din seria 11."
+        },
+        {
+          "rating": 4.4,
+          "comment": "Durabilitate excelentă."
+        }
+      ]
     },
     {
       "id": 15,
@@ -132,6 +356,22 @@
         "#FFFF00",
         "#FF7F50",
         "#FF0000"
+      ],
+      "specifications": [
+        "Display: 6.1 inch Liquid Retina HD",
+        "Greutate: 194 g",
+        "Baterie: 2942 mAh",
+        "Rezistență la apă: IP67"
+      ],
+      "reviews": [
+        {
+          "rating": 4.6,
+          "comment": "Ecranul mare este minunat!"
+        },
+        {
+          "rating": 4.2,
+          "comment": "Bun raport calitate-preț."
+        }
       ]
     }
   ]
