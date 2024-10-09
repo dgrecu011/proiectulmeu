@@ -21,7 +21,7 @@
       "name": "iPhone 13",
       "description": "Cel mai nou model de iPhone, cu îmbunătășiri semnificative.",
       "price": 1199,
-      "image": "https://example.com/iphone13.jpg",
+      "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1692412588&width=823",
       "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
     },
     {
@@ -29,7 +29,7 @@
       "name": "iPhone 13 Mini",
       "description": "Model compact cu toate funcțiile iPhone 13.",
       "price": 899,
-      "image": "https://example.com/iphone13mini.jpg",
+      "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-mini-midnight-2022?wid=2000&hei=1897&fmt=jpeg&qlt=95&.v=1679072980362",
       "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
     },
     {
@@ -37,7 +37,7 @@
       "name": "iPhone 13 Pro",
       "description": "Cel mai avansat model cu tehnologii inovatoare.",
       "price": 1399,
-      "image": "https://example.com/iphone13pro.jpg",
+      "image": "https://iplanet.one/cdn/shop/files/iPhone_13_Pro_Max_Alpine_Green_PDP_Image_Position-1A__en-US_73fb822d-b4dd-42da-a2a1-5ad453ce79e8.jpg?v=1691139848&width=493",
       "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
     },
     {
@@ -45,7 +45,7 @@
       "name": "iPhone 13 Pro Max",
       "description": "Performanță maximă și o cameră excepțională.",
       "price": 1599,
-      "image": "https://example.com/iphone13promax.jpg",
+      "image": "https://enter.online/images/product/2022/02/enter-apple-iphone-13-pro-max-074.webp",
       "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
     },
     {
@@ -53,7 +53,7 @@
       "name": "iPhone 14",
       "description": "Experiență de utilizare îmbunătățită cu un design elegant.",
       "price": 1099,
-      "image": "https://example.com/iphone14.jpg",
+      "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-14-140500.webp",
       "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
     },
     {
@@ -61,7 +61,7 @@
       "name": "iPhone 14 Plus",
       "description": "Model mai mare pentru o experiență de vizualizare excelentă.",
       "price": 1199,
-      "image": "https://example.com/iphone14plus.jpg",
+      "image": "https://xstore.md/images/product/2022/09/Apple-iPhone-14-Plus-Red-1.png",
       "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
     },
     {
@@ -69,7 +69,7 @@
       "name": "iPhone 14 Pro",
       "description": "Cel mai bun model cu tehnologie de vârf și camera profesională.",
       "price": 1399,
-      "image": "https://example.com/iphone14pro.jpg",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-14-pro-spaceblack-202404?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712956909430",
       "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
     },
     {
@@ -77,7 +77,7 @@
       "name": "iPhone 14 Pro Max",
       "description": "Modelul suprem cu cea mai bună cameră și durabilitate.",
       "price": 1599,
-      "image": "https://example.com/iphone14promax.jpg",
+      "image": "https://darwin.md/images/product/2023/09/darwin-apple-iphone-14-pro-max-256-gb-deep-purple-140352.webp",
       "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
     },
     {
@@ -85,7 +85,7 @@
       "name": "iPhone SE (2022)",
       "description": "Model accesibil cu performanțe de top.",
       "price": 499,
-      "image": "https://example.com/iphonese2022.jpg",
+      "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-se-2022-82684.webp",
       "colors": ["#000000", "#F5F5DC", "#FF0000"]
     },
     {
@@ -93,7 +93,7 @@
       "name": "iPhone 11",
       "description": "Un model mai vechi cu performanțe excelente și un preț atractiv.",
       "price": 699,
-      "image": "https://example.com/iphone11.jpg",
+      "image": "https://darwin.md/images/product/2023/09/darwin-apple-iphone-11-128-gb-white-5283.webp",
       "colors": [
         "#000000",
         "#FFFFFF",
@@ -108,7 +108,7 @@
       "name": "iPhone 11 Pro",
       "description": "Performanță excepțională cu un sistem de camere triplu.",
       "price": 999,
-      "image": "https://example.com/iphone11pro.jpg",
+      "image": "https://darwin.md/images/product/2023/05/darwin-apple-iphone-11-pro-max-64-gb-gold-251502.webp",
       "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
     },
     {
@@ -116,7 +116,7 @@
       "name": "iPhone 11 Pro Max",
       "description": "Modelul de top din seria iPhone 11 cu cea mai bună cameră.",
       "price": 1099,
-      "image": "https://example.com/iphone11promax.jpg",
+      "image": "https://enter.online/images/product/2023/05/enter-apple-iphone-11-pro-max-251508.webp",
       "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
     },
     {
@@ -124,7 +124,7 @@
       "name": "iPhone XR",
       "description": "Model cu un ecran mare și culori vibrante.",
       "price": 599,
-      "image": "https://example.com/iphonexr.jpg",
+      "image": "https://darwin.md/images/product/2023/09/darwin-apple-iphone-xr-64-gb-black-109250.webp",
       "colors": [
         "#000000",
         "#FFFFFF",

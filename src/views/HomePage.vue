@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto p-4">
     <!-- Header principal -->
-    <section class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+    <section class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg">
       <h1 class="text-4xl font-bold">Welcome to Our iPhone Store!</h1>
       <p class="mt-4 text-lg">
         Discover the latest iPhones with exclusive offers and discounts.
@@ -20,7 +20,7 @@
           <img
             :src="product.image"
             :alt="product.name"
-            class="w-full h-48 object-cover rounded-t-lg"
+            class="w-full h-48 object-contain rounded-t-lg"
           />
           <h3 class="text-xl font-semibold mt-4">{{ product.name }}</h3>
           <p class="text-gray-500">{{ product.description }}</p>
@@ -113,14 +113,14 @@ export default {
       }
     },
     addToCart(product) {
-  const color = product.selectedColor ? product.selectedColor.toLowerCase() : null; // Normalizare
-  const productToAdd = { ...product, selectedColor: color };
-  this.addToCartAction(productToAdd);
-  this.addedToCart = product.id;
-  setTimeout(() => {
-    this.addedToCart = null;
-  }, 3000);
-},
+      const color = product.selectedColor ? product.selectedColor.toLowerCase() : null; // Normalizare
+      const productToAdd = { ...product, selectedColor: color };
+      this.addToCartAction(productToAdd);
+      this.addedToCart = product.id;
+      setTimeout(() => {
+        this.addedToCart = null;
+      }, 3000);
+    },
     formatPrice(price) {
       return price.toFixed(2);
     },
