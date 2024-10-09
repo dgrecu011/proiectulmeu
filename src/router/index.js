@@ -6,17 +6,17 @@ import CartPage from "../views/CartPage.vue";
 import AboutPage from "../views/AboutPage.vue";
 import ContactPage from "../views/ContactPage.vue";
 import RegisterPage from "@/views/RegisterPage.vue";
-import ShopPage from "@/views/ShopPage.vue";
+import CheckoutPage from "../views/CheckoutPage.vue";
 
 const routes = [
   { path: "/", component: HomePage },
   { path: "/product/:id", name: "ProductPage", component: ProductPage },
-  { path: "/login", component: LoginPage },
+  { path: "/login", name: "Login", component: LoginPage }, // Added name here
   { path: "/cart", component: CartPage },
   { path: "/about", component: AboutPage },
   { path: "/contact", component: ContactPage },
   { path: "/register", component: RegisterPage },
-  { path: "/shop", component: ShopPage },
+  { path: "/checkout", name: "Checkout", component: CheckoutPage },
 ];
 
 const router = createRouter({

@@ -42,9 +42,9 @@
       </form>
       <p class="mt-4 text-center">
         Nu ai un cont?
-        <router-link to="/register" class="text-blue-600 hover:underline"
-          >Înscrie-te acum!</router-link
-        >
+        <router-link to="/register" class="text-blue-600 hover:underline">
+          Înscrie-te acum!
+        </router-link>
       </p>
     </section>
 
@@ -72,9 +72,9 @@ export default {
       );
 
       if (user) {
-        // Folosește Vuex pentru a gestiona autentificarea
         this.$store.dispatch("loginUser", user);
-        this.$router.push("/");
+        const redirect = this.$route.query.redirect || '/';
+        this.$router.push(redirect);
       } else {
         this.error = "Email sau parolă incorectă.";
       }
