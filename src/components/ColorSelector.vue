@@ -4,7 +4,10 @@
       v-for="color in colors"
       :key="color"
       class="color-option"
-      :style="{ backgroundColor: color }"
+      :style="{
+        backgroundColor: color,
+        borderColor: isLightColor(color) ? '#ccc' : 'transparent',
+      }"
       :class="{ selected: selectedColor === color }"
       @click="selectColor(color)"
     ></div>
@@ -27,6 +30,14 @@ export default {
     selectColor(color) {
       this.$emit("color-selected", color);
     },
+    isLightColor(color) {
+      const hex = color.replace("#", "");
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+      return brightness > 200;
+    },
   },
 };
 </script>
@@ -34,27 +45,25 @@ export default {
 <style scoped>
 .color-selector {
   display: flex;
-  gap: 8px; /* Ajustează distanța dintre opțiunile de culoare */
+  gap: 8px;
 }
+
 .color-option {
-  width: 30px; /* Dimensiune mică pentru opțiunile de culoare */
-  height: 30px; /* Dimensiune mică pentru opțiunile de culoare */
-  border-radius: 50%; /* Formă rotundă pentru opțiunile de culoare */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   cursor: pointer;
-  border: 2px solid transparent; /* Bordură implicită */
-  transition: border 0.3s, box-shadow 0.3s; /* Tranziție lină pentru bordură și umbră */
-  position: relative; /* Poziție relativă pentru umbra */
-  background-color: rgba(0, 0, 0, 0.1); /* Fundal deschis pentru a evidenția opțiunile de culoare */
+  border: 2px solid transparent;
+  transition: border 0.3s, box-shadow 0.3s;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Adaugă umbră pentru opțiunea selectată */
 .color-option.selected {
-  border: 2px solid #000; /* Bordură pentru culoarea selectată */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Umbră pentru a evidenția opțiunea selectată */
+  border: 2px solid #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Adaugă umbră pentru opțiunile de culoare albe sau deschise */
 .color-option:hover {
-  border: 2px solid #000; /* Bordură pentru opțiunile hover */
+  border: 2px solid #000;
 }
 </style>

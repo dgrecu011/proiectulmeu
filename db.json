@@ -6,7 +6,7 @@
       "description": "Un smartphone cu performanțã remarcabile și un design elegant.",
       "price": 999,
       "image": "https://garagesaleszw.com/wp-content/uploads/2023/11/refurb-iphone-12-black-2020.jpeg",
-      "colors": ["Black", "White", "Blue"]
+      "colors": ["#000000", "#FFFFFF", "#0000FF"]
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "Modelul Pro cu camere avansate și performanțe ridicate.",
       "price": 1299,
       "image": "https://bestpricegh.com/cdn/shop/products/gold_9f6f0006-2d5b-479a-b495-68021ddd0a17_2048x.jpg?v=1603112378",
-      "colors": ["Graphite", "Silver", "Gold", "Pacific Blue"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700", "#4169E1"]
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "Cel mai nou model de iPhone, cu îmbunătășiri semnificative.",
       "price": 1199,
       "image": "https://example.com/iphone13.jpg",
-      "colors": ["Pink", "Blue", "Red", "Starlight", "Midnight"]
+      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "description": "Model compact cu toate funcțiile iPhone 13.",
       "price": 899,
       "image": "https://example.com/iphone13mini.jpg",
-      "colors": ["Pink", "Blue", "Red", "Starlight", "Midnight"]
+      "colors": ["#FFC0CB", "#0000FF", "#FF0000", "#F5F5DC", "#000000"]
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "Cel mai avansat model cu tehnologii inovatoare.",
       "price": 1399,
       "image": "https://example.com/iphone13pro.jpg",
-      "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"]
+      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "description": "Performanță maximă și o cameră excepțională.",
       "price": 1599,
       "image": "https://example.com/iphone13promax.jpg",
-      "colors": ["Graphite", "Gold", "Silver", "Sierra Blue"]
+      "colors": ["#4B4B4B", "#FFD700", "#C0C0C0", "#87CEEB"]
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "description": "Experiență de utilizare îmbunătățită cu un design elegant.",
       "price": 1099,
       "image": "https://example.com/iphone14.jpg",
-      "colors": ["Midnight", "Starlight", "Blue", "Purple", "Red"]
+      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "description": "Model mai mare pentru o experiență de vizualizare excelentă.",
       "price": 1199,
       "image": "https://example.com/iphone14plus.jpg",
-      "colors": ["Midnight", "Starlight", "Blue", "Purple", "Red"]
+      "colors": ["#000000", "#F5F5DC", "#0000FF", "#9370DB", "#FF0000"]
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "description": "Cel mai bun model cu tehnologie de vârf și camera profesională.",
       "price": 1399,
       "image": "https://example.com/iphone14pro.jpg",
-      "colors": ["Space Black", "Silver", "Gold", "Deep Purple"]
+      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "description": "Modelul suprem cu cea mai bună cameră și durabilitate.",
       "price": 1599,
       "image": "https://example.com/iphone14promax.jpg",
-      "colors": ["Space Black", "Silver", "Gold", "Deep Purple"]
+      "colors": ["#000000", "#C0C0C0", "#FFD700", "#663399"]
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "description": "Model accesibil cu performanțe de top.",
       "price": 499,
       "image": "https://example.com/iphonese2022.jpg",
-      "colors": ["Midnight", "Starlight", "Product Red"]
+      "colors": ["#000000", "#F5F5DC", "#FF0000"]
     },
     {
       "id": 12,
@@ -94,7 +94,14 @@
       "description": "Un model mai vechi cu performanțe excelente și un preț atractiv.",
       "price": 699,
       "image": "https://example.com/iphone11.jpg",
-      "colors": ["Black", "White", "Green", "Yellow", "Purple", "Red"]
+      "colors": [
+        "#000000",
+        "#FFFFFF",
+        "#008000",
+        "#FFFF00",
+        "#9370DB",
+        "#FF0000"
+      ]
     },
     {
       "id": 13,
@@ -102,7 +109,7 @@
       "description": "Performanță excepțională cu un sistem de camere triplu.",
       "price": 999,
       "image": "https://example.com/iphone11pro.jpg",
-      "colors": ["Space Gray", "Silver", "Gold"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
     },
     {
       "id": 14,
@@ -110,7 +117,7 @@
       "description": "Modelul de top din seria iPhone 11 cu cea mai bună cameră.",
       "price": 1099,
       "image": "https://example.com/iphone11promax.jpg",
-      "colors": ["Space Gray", "Silver", "Gold"]
+      "colors": ["#4B4B4B", "#C0C0C0", "#FFD700"]
     },
     {
       "id": 15,
@@ -118,7 +125,14 @@
       "description": "Model cu un ecran mare și culori vibrante.",
       "price": 599,
       "image": "https://example.com/iphonexr.jpg",
-      "colors": ["Black", "White", "Blue", "Yellow", "Coral", "Product Red"]
+      "colors": [
+        "#000000",
+        "#FFFFFF",
+        "#0000FF",
+        "#FFFF00",
+        "#FF7F50",
+        "#FF0000"
+      ]
     }
   ]
 }
