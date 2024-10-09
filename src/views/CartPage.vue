@@ -15,7 +15,7 @@
           <div class="flex items-center">
             <img :src="item.image" :alt="item.name" class="w-20 h-20 object-cover rounded-lg mr-4" />
             <div>
-              <h2 class="text-xl font-semibold">{{ item.name }} - {{ item.selectedColor }}</h2>
+              <h2 class="text-xl font-semibold">{{ item.name }} - {{ hexToColor(item.selectedColor) }}</h2>
               <p class="text-gray-600">{{ item.description }}</p>
               <p class="text-red-600 font-bold">{{ item.discountPrice || item.price }} RON</p>
             </div>
@@ -75,6 +75,29 @@ export default {
   },
   methods: {
     ...mapActions(["removeFromCartAction", "removeAllFromCartAction", "updateQuantityAction"]),
+
+    hexToColor(hex) {
+      const colors = {
+        '#000000': 'Black',
+        '#FFFFFF': 'White',
+        '#0000FF': 'Blue',
+        '#FF0000': 'Red',
+        '#F5F5DC': 'Beige',
+        '#4B4B4B': 'Dark Gray',
+        '#C0C0C0': 'Silver',
+        '#FFD700': 'Gold',
+        '#4169E1': 'Royal Blue',
+        '#FFC0CB': 'Pink',
+        '#FF7F50': 'Coral',
+        '#9370DB': 'Medium Purple',
+        '#008000': 'Green',
+        '#FFFF00': 'Yellow',
+        '#663399': 'Rebecca Purple',
+        '#87CEEB': 'Sky Blue',
+      };
+
+      return colors[hex.toUpperCase()] || hex; // Returnează hex-ul original dacă nu găsește culoarea
+    },
 
     removeFromCart(productId, selectedColor) {
       this.removeFromCartAction({ productId, selectedColor });
