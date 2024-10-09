@@ -1,9 +1,7 @@
 <template>
   <div class="container mx-auto p-4">
     <!-- Header principal -->
-    <section
-      class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"
-    >
+    <section class="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
       <h1 class="text-4xl font-bold">Welcome to Our iPhone Store!</h1>
       <p class="mt-4 text-lg">
         Discover the latest iPhones with exclusive offers and discounts.
@@ -30,7 +28,6 @@
             {{ formatPrice(product.price) }} €
           </p>
 
-          <!-- Color selection using hexadecimal codes -->
           <color-selector
             :colors="product.colors"
             :selected-color="product.selectedColor"
@@ -50,7 +47,6 @@
               Add to Cart
             </button>
           </div>
-          <!-- Badge verde care apare când produsul este adăugat în coș -->
           <div v-if="addedToCart === product.id" class="mt-2 text-green-600">
             ✔ Added to cart!
           </div>
@@ -61,30 +57,18 @@
     <!-- Bannere promotionale -->
     <section class="bg-gray-100 py-12 mt-16">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div
-          class="bg-gradient-to-r from-green-400 to-blue-500 p-8 text-white rounded-lg shadow-lg"
-        >
-          <h3 class="text-2xl font-bold">
-            Special Discount for New Customers!
-          </h3>
-          <p class="mt-4">
-            Get 10% off your first purchase. Limited time offer!
-          </p>
+        <div class="bg-gradient-to-r from-green-400 to-blue-500 p-8 text-white rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold">Special Discount for New Customers!</h3>
+          <p class="mt-4">Get 10% off your first purchase. Limited time offer!</p>
           <router-link
             to="/shop"
             class="inline-block mt-6 bg-white text-green-600 font-bold px-6 py-2 rounded-lg"
             >Shop Now</router-link
           >
         </div>
-        <div
-          class="bg-gradient-to-r from-yellow-400 to-red-500 p-8 text-white rounded-lg shadow-lg"
-        >
-          <h3 class="text-2xl font-bold">
-            Buy an iPhone, Get Free Accessories!
-          </h3>
-          <p class="mt-4">
-            Offer valid for selected models only. Don't miss out!
-          </p>
+        <div class="bg-gradient-to-r from-yellow-400 to-red-500 p-8 text-white rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold">Buy an iPhone, Get Free Accessories!</h3>
+          <p class="mt-4">Offer valid for selected models only. Don't miss out!</p>
           <router-link
             to="/shop"
             class="inline-block mt-6 bg-white text-red-600 font-bold px-6 py-2 rounded-lg"
@@ -119,11 +103,9 @@ export default {
       try {
         const response = await fetch("http://localhost:3000/products");
         this.products = await response.json();
-
-        // Setăm culoarea implicită pe baza codurilor de culoare
         this.products.forEach((product) => {
           if (!product.selectedColor) {
-            product.selectedColor = product.colors[0]; // Selectăm primul cod de culoare
+            product.selectedColor = product.colors[0];
           }
         });
       } catch (error) {
@@ -131,14 +113,14 @@ export default {
       }
     },
     addToCart(product) {
-      const color = product.selectedColor || null;
-      const productToAdd = { ...product, selectedColor: color };
-      this.addToCartAction(productToAdd);
-      this.addedToCart = product.id;
-      setTimeout(() => {
-        this.addedToCart = null;
-      }, 3000);
-    },
+  const color = product.selectedColor ? product.selectedColor.toLowerCase() : null; // Normalizare
+  const productToAdd = { ...product, selectedColor: color };
+  this.addToCartAction(productToAdd);
+  this.addedToCart = product.id;
+  setTimeout(() => {
+    this.addedToCart = null;
+  }, 3000);
+},
     formatPrice(price) {
       return price.toFixed(2);
     },

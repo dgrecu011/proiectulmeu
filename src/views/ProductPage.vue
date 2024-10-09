@@ -75,30 +75,43 @@ export default {
       }).format(price);
     },
     selectColor(color) {
-      this.selectedColor = color.toLowerCase(); // Convertim culoarea la litere mici
+      this.selectedColor = color.toLowerCase();
     },
     addToCart() {
-      if (!this.selectedColor) {
-        alert("Te rog să selectezi o culoare înainte de a adăuga produsul în coș.");
-        return;
-      }
-      const productWithColor = { ...this.product, selectedColor: this.selectedColor };
+  if (!this.selectedColor) {
+    alert("Te rog să selectezi o culoare înainte de a adăuga produsul în coș.");
+    return;
+  }
+  const productWithColor = { ...this.product, selectedColor: this.selectedColor.toLowerCase() }; // Normalizare
 
-      // Adăugăm produsul în coș folosind Vuex
-      this.addToCartAction(productWithColor);
-      this.addedToCart = true;
+  // Verificăm dacă produsul există deja în coș
+  const existingProduct = this.$store.getters.cart.find(item => 
+    item.id === productWithColor.id && item.selectedColor.toLowerCase() === productWithColor.selectedColor // Normalizare
+  );
 
-      setTimeout(() => {
-        this.addedToCart = false;
-      }, 3000);
-    },
+  if (existingProduct) {
+    // Dacă există, actualizăm cantitatea
+    this.$store.dispatch("updateQuantityAction", {
+      productId: existingProduct.id,
+      selectedColor: existingProduct.selectedColor,
+      quantity: existingProduct.quantity + 1,
+    });
+  } else {
+    // Altfel, adăugăm produsul în coș
+    this.addToCartAction(productWithColor);
+  }
+
+  this.addedToCart = true;
+  setTimeout(() => {
+    this.addedToCart = false;
+  }, 3000);
+},
     fetchProduct() {
       const productId = this.$route.params.id;
       axios.get(`http://localhost:3000/products/${productId}`)
         .then((response) => {
           this.product = response.data;
-          // Setăm culoarea selectată inițial
-          this.selectedColor = this.product.colors[0].toLowerCase(); // Setează prima culoare ca valoare implicită
+          this.selectedColor = this.product.colors[0].toLowerCase();
         })
         .catch((error) => {
           console.error("Eroare la obținerea produsului:", error);
