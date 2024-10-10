@@ -7,7 +7,7 @@
     >
       
       <div class="mb-4 md:mb-0">
-        <h2 class="text-lg font-bold">My Online Store</h2>
+        <h2 class="text-lg font-bold">Iphone Store</h2>
         <p class="text-sm">Your one-stop shop for the latest gadgets.</p>
         <p class="text-sm">Follow us on:</p>
         <div class="flex space-x-4 mt-2">
@@ -61,7 +61,7 @@
     </div>
 
     <div class="text-center mt-6">
-      <p class="text-sm">© 2024 My Online Store. All rights reserved.</p>
+      <p class="text-sm">© 2024 Iphone Store. All rights reserved.</p>
     </div>
   </footer>
 </template>

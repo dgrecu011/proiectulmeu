@@ -2,16 +2,24 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    cart: [],
+    cart: JSON.parse(localStorage.getItem("cart")) || [],
     loggedInUser: JSON.parse(localStorage.getItem("loggedInUser")) || null,
   },
   mutations: {
     setLoggedInUser(state, user) {
       state.loggedInUser = user;
+      if (user) {
+        localStorage.setItem("cart", JSON.stringify(state.cart));
+      } else {
+        localStorage.removeItem("cart");
+        state.cart = [];
+      }
     },
     logoutUser(state) {
       state.loggedInUser = null;
       localStorage.removeItem("loggedInUser");
+      localStorage.removeItem("cart");
+      state.cart = [];
     },
     addToCart(state, product) {
       const existingProduct = state.cart.find(
@@ -23,14 +31,17 @@ export default createStore({
       } else {
         state.cart.push({ ...product, quantity: 1 });
       }
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeFromCart(state, { productId, selectedColor }) {
       state.cart = state.cart.filter(
         (item) => !(item.id === productId && item.selectedColor === selectedColor)
       );
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeAllFromCart(state) {
       state.cart = [];
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     updateQuantity(state, { productId, selectedColor, quantity }) {
       const item = state.cart.find(
@@ -38,6 +49,7 @@ export default createStore({
       );
       if (item) {
         item.quantity = quantity;
+        localStorage.setItem("cart", JSON.stringify(state.cart));
       }
     },
   },
